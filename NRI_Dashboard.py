@@ -60,6 +60,10 @@ nri_plot_1.reset_index(inplace=True)
 #sorting data for plot
 nri_plot_1=nri_plot_1.sort_values(by=['EAL_VALB'], ascending=False)
 
+number_states=st.selectbox(label="Select Number of States To View",
+options=(5, 10, 15, 20, 25, 30, 35, 40, 45, 50))
+
+nri_plot_1MAP=nri_plot_1[:number_states]
 #renaming columns
 nri_plot_1.rename(columns={'EAL_VALB': 'Building Loss',
                          'EAL_VALA': 'Agricultural Loss',
@@ -67,7 +71,7 @@ nri_plot_1.rename(columns={'EAL_VALB': 'Building Loss',
                                            inplace=True)
 
 #making bar graph
-fig0 = px.bar(nri_plot_1, x="STATEABBRV", 
+fig0 = px.bar(nri_plot_1MAP, x="STATEABBRV", 
              y=['Building Loss', 'Agricultural Loss', 'Population Loss'], 
              labels={"value": "Annual Estimated Loss ($)", 'STATEABBRV':'State', "variable": "Loss Breakdown"},
              color_discrete_map={"Building Loss": "silver", "Agricultural Loss": "green", 'Population Loss':'black'},
