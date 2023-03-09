@@ -21,7 +21,7 @@ import streamlit as st
 
 
 #Writing dashboard title 
-st.title("Visualizing Natural Disaster Risk and Climate Risk in the U.S.)
+st.title("Visualizing Natural Disaster Risk and Climate Risk in the U.S.")
 
 #Adding text describing issue 
 st.write('Natural disasters present a fundamental risk to housing and economic security in the U.S. In 2021 alone natural disasters cost the U.S $145 Billion. In an effort to improve data surrounding natural disasters, the Federal Emergency Management Agency released the National Risk Index (NRI) which provides comprehensive county level data on natural disaster risks.')
